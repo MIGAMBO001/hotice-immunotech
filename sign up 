@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HOTICE | Create Account</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-950 text-white flex items-center justify-center min-h-screen">
+
+<div class="w-full max-w-md p-6 bg-slate-900 border border-slate-800 rounded-xl space-y-4">
+
+    <h1 class="text-2xl font-bold">Create Account</h1>
+
+    <input type="text" placeholder="Full Name"
+        class="w-full p-3 bg-slate-950 border border-slate-800 rounded-lg">
+
+    <input type="email" placeholder="Email"
+        class="w-full p-3 bg-slate-950 border border-slate-800 rounded-lg">
+
+    <input type="password" placeholder="Password"
+        class="w-full p-3 bg-slate-950 border border-slate-800 rounded-lg">
+
+    <a href="portal.html"
+       class="block text-center w-full p-3 bg-emerald-500 text-black font-bold rounded-lg">
+        Create Account 
+    </a>
+
+    <p class="text-sm text-slate-400 text-center">
+        Already have an account? <a href="login.html" class="text-emerald-400">Sign in</a>
+    </p>
+
+</div>
+
+
+<script type="module">
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+
+window.signupUser = async function () {
+
+    let email = document.querySelector("input[type=email]").value;
+    let password = document.querySelector("input[type=password]").value;
+
+    try {
+        await createUserWithEmailAndPassword(window.auth, email, password);
+        window.location.href = "portal.html";
+    } catch (e) {
+        alert(e.message);
+    }
+}
+</script>
+</body>
+</html>
