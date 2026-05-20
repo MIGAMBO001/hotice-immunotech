@@ -5,7 +5,6 @@
 <title>HOTICE | Sign In</title>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-
 <body class="bg-slate-950 text-white flex items-center justify-center min-h-screen">
 
 <div class="w-full max-w-md p-6 bg-slate-900 border border-slate-800 rounded-xl space-y-4">
